@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Arithmetick</string>
+    <string name="title_activity_arithmetick_top_app_bar_view">ArithmetickTopAppBarView</string>
+</resources>
