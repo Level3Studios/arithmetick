@@ -15,6 +15,8 @@
       <a
         href="https://level3studios.net/"
         class="text-slate-500 hover:text-slate-800 hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         Level 3 Studios
       </a>
