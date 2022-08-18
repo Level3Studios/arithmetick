@@ -18,11 +18,13 @@ struct ContentView: View {
                           spacing: 12,
                           content: {
                     ForEach(gridItems, id: \.self) {
-                        Text($0.category.displayLabel)
+                        CategoryCardView(categoryItem: $0)
                     }
                 })
             }
             .navigationTitle("Categories")
+            .navigationBarTitleDisplayMode(.large)
+            .navigationViewStyle(.columns)
         }
     }
 }

@@ -14,6 +14,7 @@
 		A560B66228AECBB100C0DC23 /* arithmetickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A560B66128AECBB100C0DC23 /* arithmetickTests.swift */; };
 		A560B67C28AECF2F00C0DC23 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = A560B67B28AECF2F00C0DC23 /* SFSafeSymbols */; };
 		A560B67F28AED1E900C0DC23 /* CategoryItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A560B67E28AED1E900C0DC23 /* CategoryItemModel.swift */; };
+		A560B68228AEDB9400C0DC23 /* CategoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A560B68128AEDB9300C0DC23 /* CategoryCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		A560B66128AECBB100C0DC23 /* arithmetickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arithmetickTests.swift; sourceTree = "<group>"; };
 		A560B66728AECBB100C0DC23 /* arithmetickUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arithmetickUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A560B67E28AED1E900C0DC23 /* CategoryItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemModel.swift; sourceTree = "<group>"; };
+		A560B68128AEDB9300C0DC23 /* CategoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		A560B64F28AECBAF00C0DC23 /* arithmetick */ = {
 			isa = PBXGroup;
 			children = (
+				A560B68028AEDB7D00C0DC23 /* Components */,
 				A560B67D28AED19E00C0DC23 /* Models */,
 				A560B65028AECBAF00C0DC23 /* arithmetickApp.swift */,
 				A560B65228AECBAF00C0DC23 /* ContentView.swift */,
@@ -124,6 +127,14 @@
 				A560B67E28AED1E900C0DC23 /* CategoryItemModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A560B68028AEDB7D00C0DC23 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A560B68128AEDB9300C0DC23 /* CategoryCardView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A560B68228AEDB9400C0DC23 /* CategoryCardView.swift in Sources */,
 				A560B67F28AED1E900C0DC23 /* CategoryItemModel.swift in Sources */,
 				A560B65328AECBAF00C0DC23 /* ContentView.swift in Sources */,
 				A560B65128AECBAF00C0DC23 /* arithmetickApp.swift in Sources */,
