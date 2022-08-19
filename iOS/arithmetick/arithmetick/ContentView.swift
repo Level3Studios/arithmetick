@@ -17,12 +17,16 @@ struct ContentView: View {
                 LazyVGrid(columns: self.gridSizes,
                           spacing: 12,
                           content: {
-                    ForEach(gridItems, id: \.self) {
-                        Text($0.category.displayLabel)
+                    ForEach(gridItems, id: \.self) { item in
+                        NavigationLink(destination: ConverterView(viewModel: ConversionViewModel(categoryItem: item)), label: {
+                        CategoryCardView(categoryItem: item)
+                        })
                     }
                 })
             }
             .navigationTitle("Categories")
+            .navigationBarTitleDisplayMode(.large)
+            .navigationViewStyle(.columns)
         }
     }
 }
