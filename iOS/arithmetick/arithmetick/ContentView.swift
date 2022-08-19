@@ -17,8 +17,10 @@ struct ContentView: View {
                 LazyVGrid(columns: self.gridSizes,
                           spacing: 12,
                           content: {
-                    ForEach(gridItems, id: \.self) {
-                        CategoryCardView(categoryItem: $0)
+                    ForEach(gridItems, id: \.self) { item in
+                        NavigationLink(destination: ConverterView(viewModel: ConversionViewModel(categoryItem: item)), label: {
+                        CategoryCardView(categoryItem: item)
+                        })
                     }
                 })
             }
