@@ -9,28 +9,76 @@ import XCTest
 @testable import arithmetick
 
 class arithmetickTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    func testHelperMethods() {
+        let testModel = ConversionViewModel.testModel(category: .length)
+        XCTAssertEqual(testModel.categoryItem.category.displayLabel, "Length")
+        
+        //empty value should be treated like 0
+        testModel.inputValue = ""
+        let meterModel = testModel.convertedUnits.first(where: { $0.unit == UnitLength.meters })
+        XCTAssertEqual(meterModel?.value, "0")
+        
+        //non numerical values will be skipped
+        testModel.inputValue = "hello"
+        let kiloModel = testModel.convertedUnits.first(where: { $0.unit == UnitLength.kilometers })
+        XCTAssertEqual(kiloModel?.value, "0")
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testLengthConversions() {
+        // Setup model tests
+        let viewModel = ConversionViewModel(categoryItem: .init(category: .length))
+        XCTAssertEqual(viewModel.categoryItem.category.displayLabel, "Length")
+        XCTAssertEqual(viewModel.selectedUnit, UnitLength.feet)
+        XCTAssertFalse(viewModel.convertedUnits.contains(where: { $0.unit == UnitLength.feet}))
+        
+        // Conversion tests
+        viewModel.inputValue = "24"
+        let inchConversion = viewModel.convertedUnits.first(where: { $0.unit == UnitLength.inches})
+        XCTAssertEqual(inchConversion?.value, "288")
+        let yardConversion = viewModel.convertedUnits.first(where: { $0.unit == UnitLength.yards})
+        XCTAssertEqual(yardConversion?.value, "8")
+        
+        viewModel.didSelectUnit(converterUnit: ConvertedUnitModel(value: "0", unit: UnitLength.meters))
+        viewModel.inputValue = "36"
+        let millimeterConversion = viewModel.convertedUnits.first(where: { $0.unit == UnitLength.millimeters})
+        XCTAssertEqual(millimeterConversion?.value, "36,000")
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testTemperatureConversions() {
+        // Setup model tests
+        let viewModel = ConversionViewModel(categoryItem: .init(category: .temperature))
+        XCTAssertEqual(viewModel.categoryItem.category.displayLabel, "Temperature")
+        XCTAssertEqual(viewModel.selectedUnit, UnitTemperature.fahrenheit)
+        XCTAssertTrue(viewModel.convertedUnits.contains(where: { $0.unit == UnitTemperature.kelvin }))
+        XCTAssertFalse(viewModel.convertedUnits.contains(where: { $0.unit == UnitMass.pounds}))
+        
+        // Conversion Tests
+        viewModel.inputValue = "32"
+        let celciusConversion = viewModel.convertedUnits.first(where: { $0.unit == UnitTemperature.celsius})
+        XCTAssertEqual(celciusConversion?.value, "0")
+        viewModel.didSelectUnit(converterUnit: ConvertedUnitModel(value: "0", unit: UnitTemperature.kelvin))
+        viewModel.inputValue = "98.2"
+        let fahrenheitConversion = viewModel.convertedUnits.first(where: { $0.unit == UnitTemperature.fahrenheit})
+        XCTAssertEqual(fahrenheitConversion?.value, "-282.91")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testMassConversions() {
+        // Setup model tests
+        let viewModel = ConversionViewModel(categoryItem: .init(category: .mass))
+        XCTAssertEqual(viewModel.categoryItem.category.displayLabel, "Mass")
+        XCTAssertEqual(viewModel.selectedUnit, UnitMass.grams)
+        XCTAssertTrue(viewModel.convertedUnits.contains(where: { $0.unit == UnitMass.ounces}))
+        XCTAssertFalse(viewModel.convertedUnits.contains(where: { $0.unit == UnitEnergy.joules}))
+        
+        // Conversion Tests
+        viewModel.inputValue = "980"
+        let poundModel = viewModel.convertedUnits.first(where: { $0.unit == UnitMass.pounds})
+        XCTAssertEqual(poundModel?.value, "2.161")
+        viewModel.didSelectUnit(converterUnit: ConvertedUnitModel(value: "0", unit: UnitMass.grams))
+        viewModel.inputValue = "2500.0"
+        let kiloModel = viewModel.convertedUnits.first(where: { $0.unit == UnitMass.kilograms})
+        XCTAssertEqual(kiloModel?.value, "2.5")
     }
-
+    
 }

@@ -28,13 +28,6 @@
 			remoteGlobalIDString = A560B64C28AECBAF00C0DC23;
 			remoteInfo = arithmetick;
 		};
-		A560B66828AECBB100C0DC23 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A560B64528AECBAF00C0DC23 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A560B64C28AECBAF00C0DC23;
-			remoteInfo = arithmetick;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +38,6 @@
 		A560B65728AECBB000C0DC23 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A560B65D28AECBB100C0DC23 /* arithmetickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arithmetickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A560B66128AECBB100C0DC23 /* arithmetickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arithmetickTests.swift; sourceTree = "<group>"; };
-		A560B66728AECBB100C0DC23 /* arithmetickUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arithmetickUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A560B67E28AED1E900C0DC23 /* CategoryItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemModel.swift; sourceTree = "<group>"; };
 		A560B68128AEDB9300C0DC23 /* CategoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCardView.swift; sourceTree = "<group>"; };
 		A560B68328AEE8E100C0DC23 /* ConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterView.swift; sourceTree = "<group>"; };
@@ -69,13 +61,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A560B66428AECBB100C0DC23 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -93,7 +78,6 @@
 			children = (
 				A560B64D28AECBAF00C0DC23 /* arithmetick.app */,
 				A560B65D28AECBB100C0DC23 /* arithmetickTests.xctest */,
-				A560B66728AECBB100C0DC23 /* arithmetickUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -195,24 +179,6 @@
 			productReference = A560B65D28AECBB100C0DC23 /* arithmetickTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A560B66628AECBB100C0DC23 /* arithmetickUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A560B67728AECBB100C0DC23 /* Build configuration list for PBXNativeTarget "arithmetickUITests" */;
-			buildPhases = (
-				A560B66328AECBB100C0DC23 /* Sources */,
-				A560B66428AECBB100C0DC23 /* Frameworks */,
-				A560B66528AECBB100C0DC23 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A560B66928AECBB100C0DC23 /* PBXTargetDependency */,
-			);
-			name = arithmetickUITests;
-			productName = arithmetickUITests;
-			productReference = A560B66728AECBB100C0DC23 /* arithmetickUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -227,10 +193,6 @@
 						CreatedOnToolsVersion = 13.4.1;
 					};
 					A560B65C28AECBB100C0DC23 = {
-						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = A560B64C28AECBAF00C0DC23;
-					};
-					A560B66628AECBB100C0DC23 = {
 						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = A560B64C28AECBAF00C0DC23;
 					};
@@ -254,7 +216,6 @@
 			targets = (
 				A560B64C28AECBAF00C0DC23 /* arithmetick */,
 				A560B65C28AECBB100C0DC23 /* arithmetickTests */,
-				A560B66628AECBB100C0DC23 /* arithmetickUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -270,13 +231,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A560B65B28AECBB100C0DC23 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A560B66528AECBB100C0DC23 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -308,13 +262,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A560B66328AECBB100C0DC23 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -322,11 +269,6 @@
 			isa = PBXTargetDependency;
 			target = A560B64C28AECBAF00C0DC23 /* arithmetick */;
 			targetProxy = A560B65E28AECBB100C0DC23 /* PBXContainerItemProxy */;
-		};
-		A560B66928AECBB100C0DC23 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A560B64C28AECBAF00C0DC23 /* arithmetick */;
-			targetProxy = A560B66828AECBB100C0DC23 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -459,6 +401,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +413,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -488,6 +431,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -499,7 +443,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -543,42 +487,6 @@
 			};
 			name = Release;
 		};
-		A560B67828AECBB100C0DC23 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 243DN6T9ZG;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = level3studios.net.arithmetickUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = arithmetick;
-			};
-			name = Debug;
-		};
-		A560B67928AECBB100C0DC23 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 243DN6T9ZG;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = level3studios.net.arithmetickUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = arithmetick;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -605,15 +513,6 @@
 			buildConfigurations = (
 				A560B67528AECBB100C0DC23 /* Debug */,
 				A560B67628AECBB100C0DC23 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A560B67728AECBB100C0DC23 /* Build configuration list for PBXNativeTarget "arithmetickUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A560B67828AECBB100C0DC23 /* Debug */,
-				A560B67928AECBB100C0DC23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
