@@ -14,6 +14,11 @@
         android:theme="@style/Theme.Arithmetick"
         tools:targetApi="31">
         <activity
+            android:name=".CategoryCardView"
+            android:exported="false"
+            android:label="@string/title_activity_category_card_view"
+            android:theme="@style/Theme.Arithmetick" />
+        <activity
             android:name=".ArithmetickAppBar"
             android:exported="false"
             android:label="@string/title_activity_arithmetick_app_bar"

@@ -1,5 +1,7 @@
 package net.level3studios.arithmetick.views
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.GridCells
@@ -16,7 +18,9 @@ import androidx.navigation.compose.rememberNavController
 import com.example.arithmetick.views.ui.theme.ArithmetickTheme
 import net.level3studios.arithmetick.models.CategoryModel
 import net.level3studios.arithmetick.views.components.ArithmetickTopBar
+import net.level3studios.arithmetick.views.components.CategoryCardView
 
+@RequiresApi(Build.VERSION_CODES.N)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CategoryView(navController: NavController) {
@@ -25,6 +29,7 @@ fun CategoryView(navController: NavController) {
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.N)
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun CategoryGridView() {
@@ -36,11 +41,12 @@ fun CategoryGridView() {
         contentPadding = gridPadding,
         content = {
         items(dataItems) { item ->
-            Text(item.displayLabel)
+            CategoryCardView(category = item)
         }
     })
 }
 
+@RequiresApi(Build.VERSION_CODES.N)
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun LightCategoryPreview() {
@@ -49,6 +55,7 @@ fun LightCategoryPreview() {
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.N)
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun DarkCategoryPreview() {
