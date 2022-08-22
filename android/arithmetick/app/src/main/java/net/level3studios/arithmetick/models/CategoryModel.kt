@@ -82,7 +82,7 @@ class CategoryModel(val option: CategoryOption) {
             CategoryOption.ANGLE -> arrayOf(Angle.degrees,
                 Angle.radians)
             CategoryOption.BINARY -> arrayOf(BinarySize.megabytes,
-                BinarySize.gibibytes,
+                BinarySize.gigabytes,
                 BinarySize.kilobytes,
                 BinarySize.terabytes
             )
