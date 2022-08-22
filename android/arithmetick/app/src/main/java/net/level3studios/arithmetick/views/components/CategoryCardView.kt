@@ -1,18 +1,16 @@
 package net.level3studios.arithmetick.views.components
 
 import android.os.Build
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Card
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material.Surface
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,22 +21,29 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import net.level3studios.arithmetick.NavigationRoutes
 import net.level3studios.arithmetick.models.CategoryModel
-import net.level3studios.arithmetick.views.components.ui.theme.ArithmetickTheme
+import net.level3studios.arithmetick.ui.theme.ArithmetickTheme
 import net.level3studios.arithmetick.views.components.ui.theme.Shapes
 
+@OptIn(ExperimentalMaterialApi::class)
 @RequiresApi(Build.VERSION_CODES.N)
 @Composable
-fun CategoryCardView(category: CategoryModel) {
+fun CategoryCardView(category: CategoryModel, navController: NavController) {
     val cardModifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
-    val imageModifier = Modifier.size(48.dp)
+    val imageModifier = Modifier
+        .size(48.dp)
         .clip(CircleShape)
         .background(category.itemColor)
         .padding(12.dp)
     Card(shape = Shapes.medium,
-        backgroundColor = MaterialTheme.colorScheme.tertiaryContainer,
+        backgroundColor = MaterialTheme.colorScheme.surface,
+        border = BorderStroke(width = 2.dp, color = MaterialTheme.colorScheme.outline),
         elevation = 6.dp,
-        modifier = cardModifier) {
+        modifier = cardModifier,
+        onClick = { navController.navigate(NavigationRoutes.ConverterView.routeName + "/${category.option.id}")}) {
         Row(modifier = Modifier.padding(horizontal = 8.dp, vertical = 12.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Start) {
@@ -52,11 +57,11 @@ fun CategoryCardView(category: CategoryModel) {
             Column(modifier = Modifier.padding(start = 8.dp)) {
                 Text(category.displayLabel,
                 style = MaterialTheme.typography.labelLarge,
-                color = MaterialTheme.colorScheme.onTertiaryContainer,
+                color = MaterialTheme.colorScheme.onSurface,
                 modifier = Modifier.fillMaxWidth())
                 Text("${category.availableUnits.count()}",
                 style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onTertiaryContainer)
+                color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
         }
     }
@@ -67,7 +72,7 @@ fun CategoryCardView(category: CategoryModel) {
 @Composable
 fun LightCardPreview() {
     ArithmetickTheme {
-        CategoryCardView(category = CategoryModel.testModel())
+        CategoryCardView(category = CategoryModel.testModel(), rememberNavController())
     }
 }
 
@@ -75,7 +80,7 @@ fun LightCardPreview() {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun DarkCardPreview() {
-    ArithmetickTheme(darkTheme = true) {
-        CategoryCardView(category = CategoryModel.testModel())
+    ArithmetickTheme(useDarkTheme = true) {
+        CategoryCardView(category = CategoryModel.testModel(), rememberNavController())
     }
 }

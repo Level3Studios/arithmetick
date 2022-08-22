@@ -3,4 +3,5 @@
     <string name="title_activity_category_view">CategoryView</string>
     <string name="title_activity_arithmetick_app_bar">ArithmetickAppBar</string>
     <string name="title_activity_category_card_view">CategoryCardView</string>
+    <string name="title_activity_converter_view">ConverterView</string>
 </resources>

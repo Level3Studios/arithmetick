@@ -1,22 +1,20 @@
 package net.level3studios.arithmetick.models
 
-import android.icu.util.MeasureUnit
 import android.os.Build
 import androidx.annotation.RequiresApi
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import io.nacular.measured.units.*
 import net.level3studios.arithmetick.R
 import net.level3studios.arithmetick.ui.theme.*
 
 
 enum class CategoryOption(val id: Int) {
     LENGTH(0),
-    TEMPERATURE(1),
+    TIME(1),
     MASS(2),
-    VOLUME(3),
-    PRESSURE(4),
-    ENERGY(5)
+    ANGLE(3),
+    BINARY(4)
 }
 
 
@@ -28,78 +26,65 @@ class CategoryModel(val option: CategoryOption) {
     }
 
     val displayLabel: String
-    get() = when(this.option) {
-        CategoryOption.LENGTH -> "Length"
-        CategoryOption.TEMPERATURE -> "Temperature"
-        CategoryOption.MASS -> "Mass"
-        CategoryOption.VOLUME -> "Volume"
-        CategoryOption.PRESSURE -> "Pressure"
-        CategoryOption.ENERGY -> "Energy"
-    }
+        get() = when(this.option) {
+            CategoryOption.LENGTH -> "Length"
+            CategoryOption.TIME -> "Time"
+            CategoryOption.MASS -> "Mass"
+            CategoryOption.ANGLE -> "Angle"
+            CategoryOption.BINARY -> "Binary"
+        }
 
     val itemColor: Color
-    @Composable
-    get() = when(this.option) {
-        CategoryOption.LENGTH -> MaterialTheme.colorScheme.customBlue
-        CategoryOption.TEMPERATURE -> MaterialTheme.colorScheme.customRed
-        CategoryOption.MASS -> MaterialTheme.colorScheme.customPurple
-        CategoryOption.VOLUME -> MaterialTheme.colorScheme.customOrange
-        CategoryOption.PRESSURE -> MaterialTheme.colorScheme.customGreen
-        CategoryOption.ENERGY -> MaterialTheme.colorScheme.customYellow
-    }
+        @Composable
+        get() = when(this.option) {
+            CategoryOption.LENGTH -> customBlue
+            CategoryOption.TIME -> customRed
+            CategoryOption.MASS -> customPurple
+            CategoryOption.ANGLE -> customOrange
+            CategoryOption.BINARY -> customGreen
+        }
 
     val itemIcon: Int
-    get() = when(this.option) {
-        CategoryOption.LENGTH -> R.drawable.ic_baseline_square_foot_24
-        CategoryOption.TEMPERATURE -> R.drawable.ic_baseline_whatshot_24
-        CategoryOption.MASS -> R.drawable.ic_baseline_fitness_center_24
-        CategoryOption.VOLUME -> R.drawable.ic_baseline_opacity_24
-        CategoryOption.PRESSURE -> R.drawable.ic_baseline_countertops_24
-        CategoryOption.ENERGY -> R.drawable.ic_baseline_bolt_24
-    }
+        get() = when(this.option) {
+            CategoryOption.LENGTH -> R.drawable.ic_baseline_square_foot_24
+            CategoryOption.TIME -> R.drawable.ic_baseline_access_time_filled_24
+            CategoryOption.MASS -> R.drawable.ic_baseline_fitness_center_24
+            CategoryOption.ANGLE -> R.drawable.ic_baseline_signal_cellular_null_24
+            CategoryOption.BINARY -> R.drawable.ic_baseline_memory_24
+        }
 
-    val defaultUnit: MeasureUnit
-    @RequiresApi(Build.VERSION_CODES.N)
-    get() = when(this.option) {
-        CategoryOption.LENGTH -> MeasureUnit.FOOT
-        CategoryOption.TEMPERATURE -> MeasureUnit.FAHRENHEIT
-        CategoryOption.MASS -> MeasureUnit.GRAM
-        CategoryOption.VOLUME -> MeasureUnit.TEASPOON
-        CategoryOption.PRESSURE -> MeasureUnit.POUND_PER_SQUARE_INCH
-        CategoryOption.ENERGY -> MeasureUnit.JOULE
-    }
+    val defaultUnit: Units
+        @RequiresApi(Build.VERSION_CODES.N)
+        get() = when(this.option) {
+            CategoryOption.LENGTH -> Length.feet
+            CategoryOption.TIME -> Time.minutes
+            CategoryOption.MASS -> Mass.grams
+            CategoryOption.ANGLE -> Angle.degrees
+            CategoryOption.BINARY -> BinarySize.megabytes
+        }
 
-    val availableUnits: Array<MeasureUnit>
-    @RequiresApi(Build.VERSION_CODES.N)
-    get() = when(this.option) {
-        CategoryOption.LENGTH -> arrayOf(MeasureUnit.FOOT,
-            MeasureUnit.INCH,
-            MeasureUnit.YARD,
-            MeasureUnit.CENTIMETER,
-            MeasureUnit.MILLIMETER,
-            MeasureUnit.KILOMETER,
-            MeasureUnit.METER)
-        CategoryOption.TEMPERATURE -> arrayOf(MeasureUnit.FAHRENHEIT,
-            MeasureUnit.CELSIUS,
-            MeasureUnit.KELVIN)
-        CategoryOption.MASS -> arrayOf(MeasureUnit.GRAM,
-            MeasureUnit.KILOGRAM,
-            MeasureUnit.MILLIGRAM,
-            MeasureUnit.OUNCE,
-            MeasureUnit.POUND)
-        CategoryOption.VOLUME -> arrayOf(MeasureUnit.TEASPOON,
-            MeasureUnit.TABLESPOON,
-            MeasureUnit.GALLON,
-            MeasureUnit.CUP,
-            MeasureUnit.LITER,
-            MeasureUnit.PINT,
-            MeasureUnit.QUART)
-        CategoryOption.PRESSURE -> arrayOf(MeasureUnit.POUND_PER_SQUARE_INCH,
-            MeasureUnit.HECTOPASCAL,
-            MeasureUnit.MILLIBAR)
-        CategoryOption.ENERGY -> arrayOf(MeasureUnit.JOULE,
-            MeasureUnit.KILOJOULE,
-            MeasureUnit.KILOWATT,
-            MeasureUnit.KILOWATT_HOUR)
-    }
+    val availableUnits: Array<Units>
+        @RequiresApi(Build.VERSION_CODES.N)
+        get() = when(this.option) {
+            CategoryOption.LENGTH -> arrayOf(Length.feet,
+                Length.inches,
+                Length.miles,
+                Length.centimeters,
+                Length.millimeters,
+                Length.kilometers,
+                Length.meters)
+            CategoryOption.TIME -> arrayOf(Time.minutes,
+                Time.seconds,
+                Time.hours,
+                Time.milliseconds)
+            CategoryOption.MASS -> arrayOf(Mass.grams,
+                Mass.kilograms)
+            CategoryOption.ANGLE -> arrayOf(Angle.degrees,
+                Angle.radians)
+            CategoryOption.BINARY -> arrayOf(BinarySize.megabytes,
+                BinarySize.gibibytes,
+                BinarySize.kilobytes,
+                BinarySize.terabytes
+            )
+        }
 }

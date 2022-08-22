@@ -1,7 +1,6 @@
 package net.level3studios.arithmetick.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
@@ -68,27 +67,27 @@ private val DarkColors = darkColorScheme(
     inversePrimary = md_theme_dark_inversePrimary,
 )
 
-val ColorScheme.customBlue: Color
+val customBlue: Color
 @Composable
 get() = if (isSystemInDarkTheme()) dark_MaterialBlue else light_MaterialBlue
 
-val ColorScheme.customRed: Color
+val customRed: Color
 @Composable
 get() = if (isSystemInDarkTheme()) dark_MaterialRed else light_MaterialRed
 
-val ColorScheme.customPurple: Color
+val customPurple: Color
 @Composable
 get() = if (isSystemInDarkTheme()) dark_MaterialPurple else light_MaterialPurple
 
-val ColorScheme.customOrange: Color
+val customOrange: Color
 @Composable
 get() = if (isSystemInDarkTheme()) dark_MaterialOrange else light_MaterialOrange
 
-val ColorScheme.customGreen: Color
+val customGreen: Color
 @Composable
 get() = if(isSystemInDarkTheme()) dark_MaterialGreen else light_MaterialGreen
 
-val ColorScheme.customYellow: Color
+val customYellow: Color
 @Composable
 get() = if(isSystemInDarkTheme()) dark_MaterialYellow else light_MaterialYellow
 
