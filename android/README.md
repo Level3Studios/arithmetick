@@ -2,7 +2,7 @@
 
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.5.31-purple?style=for-the-badge&logo=android)](https://kotlinlang.org)
 
-[![Jetpack Compose](https://img.shields.io/badge/Jetpack Compose-1.1.0-blue?style=for-the-badge&logo=android)](https://developer.android.com/jetpack/compose?gclid=Cj0KCQjw9ZGYBhCEARIsAEUXITVjM5IdZZ7ATnJ6eVpGDbceXcQmfmezYOEwiGqidjpJeTZotepdU20aAqj5EALw_wcB&gclsrc=aw.ds)
+[![Jetpack Compose](https://img.shields.io/badge/Jetpack Compose-1.1.0-blue?style=for-the-badge&logo=android)](https://developer.android.com/jetpack/compose)
 
 # 🤖 Arithmetick
 
