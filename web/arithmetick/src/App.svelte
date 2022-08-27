@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Router, Route, Link } from "svelte-navigator";
+  import CategoryPage from "./lib/pages/CategoryPage.svelte";
 </script>
 
 <Router>
@@ -12,9 +13,7 @@
   </header>
 
   <main>
-    <Route path="/">
-      <h3>Category Page</h3>
-    </Route>
+    <Route component={CategoryPage} />
 
     <Route path="converter">
       <h3>Converter View</h3>
