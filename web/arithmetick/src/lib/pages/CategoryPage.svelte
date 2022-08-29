@@ -7,8 +7,8 @@
   let rightOptions = allCategoryCards.slice(3, 6);
 </script>
 
-<section class=" pb-40 relative w-full bg-gray-100">
-  <div class="container mx-auto overflow-hidden pb-20">
+<section class=" pb-40 relative bg-gray-100">
+  <div class="container mx-auto w-full overflow-hidden pb-20">
     <div class="flex flex-wrap items-center ">
       <div class="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
         <div
@@ -34,6 +34,7 @@
                 text={categoryOption.title}
                 bgColor={categoryOption.colors[0]}
                 activeColor={categoryOption.colors[1]}
+                hoverColor={categoryOption.colors[2]}
                 icon={categoryOption.icon}
               />
             {/each}
@@ -45,6 +46,7 @@
                 text={categoryOption.title}
                 bgColor={categoryOption.colors[0]}
                 activeColor={categoryOption.colors[1]}
+                hoverColor={categoryOption.colors[2]}
                 icon={categoryOption.icon}
               />
             {/each}

@@ -50,21 +50,21 @@ namespace CategoryItems {
   export function itemColors(item: CategoryItems): CategoryColors {
     switch (item) {
       case CategoryItems.LENGTH:
-        return ["bg-blue-500", "active:bg-blue-800", "hover:bg-blue-800"];
+        return ["bg-blue-500", "active:bg-blue-800", "hover:bg-blue-700"];
       case CategoryItems.TEMPERATURE:
-        return ["bg-red-500", "active:bg-red-800", "hover:bg-red-800"];
+        return ["bg-red-500", "active:bg-red-800", "hover:bg-red-700"];
       case CategoryItems.MASS:
-        return ["bg-purple-500", "active:bg-purple-800", "hover:bg-purple-800"];
+        return ["bg-purple-500", "active:bg-purple-800", "hover:bg-purple-700"];
       case CategoryItems.VOLUME:
-        return ["bg-orange-500", "active:bg-orange-800", "hover:bg-orange-800"];
+        return ["bg-orange-500", "active:bg-orange-800", "hover:bg-orange-700"];
       case CategoryItems.PRESSURE:
         return [
           "bg-emerald-500",
           "active:bg-emerald-800",
-          "hover:bg-emerald-800",
+          "hover:bg-emerald-700",
         ];
       case CategoryItems.ENERGY:
-        return ["bg-yellow-500", "active:bg-yellow-800", "hover:bg-yellow-800"];
+        return ["bg-yellow-500", "active:bg-yellow-800", "hover:bg-yellow-700"];
     }
   }
 
