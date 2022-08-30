@@ -1,6 +1,7 @@
 <script>
   //core
-  import { selectedCategory, selectedUnit, inputValue } from "../store";
+  import { Link } from "svelte-navigator";
+  import { selectedCategory, selectedUnit, inputValue } from "../helpers/store";
   //exports
   export let id = 0;
   export let bgColor = "bg-red-500";
@@ -19,7 +20,7 @@
   }
 </script>
 
-<a href="/converter" on:click={() => didSelectOption(id)}>
+<Link to="converter" on:click={() => didSelectOption(id)}>
   <div
     class="{bgColor} {activeColor} {hoverColor} shadow-lg card items-center text-center p-8 mt-8"
   >
@@ -28,4 +29,4 @@
       <p class="card-title text-lg text-white mt-4 font-semibold">{text}</p>
     </div>
   </div>
-</a>
+</Link>
