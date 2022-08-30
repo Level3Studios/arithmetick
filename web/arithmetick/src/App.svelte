@@ -3,16 +3,14 @@
   import CategoryPage from "./lib/pages/CategoryPage.svelte";
   import ConverterPage from "./lib/pages/ConverterPage.svelte";
   import HeaderBarPart from "./lib/parts/HeaderBarPart.svelte";
+  import FooterPart from "./lib/parts/FooterPart.svelte";
 </script>
 
 <Router>
   <HeaderBarPart />
-
   <main>
     <Route component={CategoryPage} />
     <Route path="converter" component={ConverterPage} />
   </main>
-  <footer>
-    <h6>Copyright 2022</h6>
-  </footer>
+  <FooterPart />
 </Router>
