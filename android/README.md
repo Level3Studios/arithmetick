@@ -10,7 +10,7 @@ This project is a simple app that performs conversions between some basic measur
 
 # 📦 Packages 
 
-The following Swift Packages were used in this app: 
+The following Android Libraries were used in this app: 
 
 - [Measured](https://github.com/nacular/measured) - Library to perform conversions between different units of measure
 
