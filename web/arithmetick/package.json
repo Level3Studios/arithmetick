@@ -1,17 +1,29 @@
 {
   "name": "arithmetick",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "author": "Sal Aldana",
+  "license": "ICS",
+  "keywords": [
+    "vite",
+    "svelte",
+    "typescript",
+    "tailwindcss",
+    "example"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.1",
     "@tsconfig/svelte": "^3.0.0",
+    "@vitest/coverage-c8": "^0.22.1",
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
     "postcss-load-config": "^4.0.1",
@@ -25,7 +37,8 @@
     "typescript": "^4.6.4",
     "uom": "^6.0.0",
     "uom-units": "^2.3.1",
-    "vite": "^3.0.7"
+    "vite": "^3.0.7",
+    "vitest": "^0.22.1"
   },
   "dependencies": {
     "daisyui": "^2.24.0",
